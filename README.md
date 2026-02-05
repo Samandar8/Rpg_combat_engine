@@ -20,9 +20,27 @@ A robust and extensible turn-based combat engine built with Python, focusing on 
 - **Python 3.10+**
 - **OOP Principles** (Inheritance, Encapsulation, Polymorphism)
 - **ABC Module** (Abstract Base Classes)
-- **Type Hinting** (For clean and maintainable code)
 
 ## 🎯 Getting Started
+
+### Prerequisites
+- Python 3 installed.
+
+### Running the Game
 To run the combat simulation:
 ```bash
 python main.py
+```
+
+### Running Tests
+To verify the engine mechanics and battle logic:
+```bash
+python tests.py
+python tests_battle.py
+```
+
+## 🎮 How to Play
+1. Launch the game with `python main.py`.
+2. You control a **Hero (Tank)**.
+3. Choose your action each turn (e.g., Melee Attack or Power Strike).
+4. Defeat the **Boss** to win!
