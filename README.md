@@ -1,46 +1,49 @@
-# Core Combat Engine (Python OOP)
+# Python RPG Combat Engine
 
-A robust and extensible turn-based combat engine built with Python, focusing on Clean Architecture and core Object-Oriented Programming principles.
+A small turn-based combat engine built to practise modular Python and object-oriented design.
 
-## 🚀 Key Features
-* **Interface-Based Architecture**: Utilizes Abstract Base Classes (`abc.ABC`) to define strict contracts for entities and combat actions.
-* **Strategy Design Pattern**: Combat skills are encapsulated into independent classes, allowing dynamic skill assignment to any character.
-* **Progression System**: A centralized Level/EXP mechanic inherited by both Heroes and Monsters.
-* **Composition & Encapsulation**: Uses properties for safe data access (e.g., HP clamping) and manages inventories/skills as composite objects.
-* **State Management**: Features a Boss "Enrage" mechanic and a system for handling turn-based combat states.
+## What it demonstrates
 
-## 🏗 Project Structure
-* `engine/base.py` – Core abstractions, entity interfaces, and base Level/HP logic.
-* `engine/entities.py` – Character hierarchy including Heroes (Tanks, Archers) and Monsters (Bosses).
-* `engine/actions.py` – Implementation of combat mechanics (Melee, Magic, Healing).
-* `engine/battle.py` – The game loop orchestrator managing turn order and player input.
-* `engine/utils.py` – Utility classes for battle logging and data handling.
+- Abstract base classes for entities, actions, and effects
+- Inheritance and composition for heroes, monsters, skills, and inventory
+- Encapsulated HP state with safe value bounds
+- Strategy-like action objects for melee attacks, power strikes, and healing
+- Character progression and a boss enrage mechanic
+- Automated tests for combat rules and entity state
 
-## 🛠 Technologies
-- **Python 3.10+**
-- **OOP Principles** (Inheritance, Encapsulation, Polymorphism)
-- **ABC Module** (Abstract Base Classes)
+## Project structure
 
-## 🎯 Getting Started
+```text
+engine/
+  actions.py    # Combat actions
+  base.py       # Core abstractions and inventory
+  battle.py     # Turn orchestration
+  effects.py    # Timed combat effects
+  entities.py   # Heroes, monsters, and progression
+  utils.py      # Battle logging
+main.py         # Example game entry point
+test_engine.py  # Unit tests for core rules
+tests_battle.py # Battle-flow test
+```
 
-### Prerequisites
-- Python 3 installed.
+## Run locally
 
-### Running the Game
-To run the combat simulation:
+Python 3.10 or newer is recommended. The project uses only the Python standard library.
+
 ```bash
+git clone https://github.com/Samandar8/Rpg_combat_engine.git
+cd Rpg_combat_engine
 python main.py
 ```
 
-### Running Tests
-To verify the engine mechanics and battle logic:
+## Run tests
+
 ```bash
-python tests.py
-python tests_battle.py
+python -m unittest discover -v
 ```
 
-## 🎮 How to Play
-1. Launch the game with `python main.py`.
-2. You control a **Hero (Tank)**.
-3. Choose your action each turn (e.g., Melee Attack or Power Strike).
-4. Defeat the **Boss** to win!
+The test suite checks HP bounds, inventory behaviour, mana use, healing, level progression, boss enrage, and the battle turn flow.
+
+## Status
+
+This is a portfolio and learning project. Planned improvements include non-interactive battle policies, richer effects, and stronger separation between game logic and console output.

@@ -1,8 +1,7 @@
 
-import sys
 import unittest
-from unittest import mock
-from io import StringIO
+import sys
+
 from engine.entities import Tank, MonsterBoss
 from engine.battle import BattleManager
 from engine.actions import MeleeAttack
